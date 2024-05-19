@@ -35,7 +35,7 @@ class Entropy:
         return "Very Weak"
 
 class Password:
-    def __init__(self, length: int, alphanumeric: bool = False, minimum_numbers: int = 0, minimum_symbols: int = 0) -> None:
+    def __init__(self, length: int = 32, alphanumeric: bool = False, minimum_numbers: int = 0, minimum_symbols: int = 0) -> None:
         self.length = length
         self.alphanumeric = alphanumeric
         self.minimum_numbers = minimum_numbers
@@ -55,8 +55,6 @@ class Password:
         alphabet = ascii_letters + digits
         if not self.alphanumeric:
             alphabet += "!@#$%^&*"
-        if self.length == None:
-            self.length = 32
         self.validate_query()
 
         password = ''.join(secrets.choice(alphabet) for _ in range(self.length))
@@ -65,7 +63,7 @@ class Password:
         return password
 
     def generate_xkcd(self, wordlist = '/usr/share/dict/usa'):
-        if self.length == None:
+        if self.length == 32:
             self.length = 4
         if self.length > 10:
             raise ValueError("XKCD-style password cannot have the length greater than 10.")
