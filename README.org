@@ -1,0 +1,32 @@
+#+title: README
+#+author: Xenia
+
+* PassGen - a very simple password generator
+TL;DR – I was looking for some simple project to create, learning Python.
+I guess here it is.
+
+* Usage
+** As a standalone program
+- src_sh[:exports_code]{python main.py [-h] [-l LENGTH] [-a] [-x/--xkcd]}
+
++ Options:
+  - src_sh{-h} - Provides with a help page
+  - src_sh{-l} - Generates a password with a defined length (default: 32 (or 4 if it's -x))
+  - src_sh{-a} - Generates an alphanumeric password (default: false)
+  - src_sh{-x} - Generates a password in XKCD style (default: false)
+
+** As a library.
+There are few modules you can use.
+src_python[:exports_code]{generate_password(length: int, alpha: bool) -> str} – Returns a standard password.
+src_python[:exports_code]{generate_xkcd_password(length: int) -> str} – Returns an  XKCD-style password.
+src_python[:exports_code]{calculate_entropy(password: str) -> float} – Returns entropy of a password.
+src_python[:exports_code]{entropy_to_strength(entropy: float) -> str} – Returns strength of a password.
+
+** Notes:
+- Max XKCD-style password length is 10 words.
+- XKCD-style passwords require the src_sh{words} package.
+- You can't use src_sh{-a} and src_sh{-x} at the same time.
+
+** To-Do:
+- Randomly add numbers to XKCD-style passwords.
+- Randomly capitalize words in XKCD-style passwords.
