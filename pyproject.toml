@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PassGen"
+
+version = "1.0.0"  # REQUIRED, although can be dynamic
+
+description = "Simple password generation utilities"
+readme = "README.md"
+
+requires-python = ">=3.8"
+
+license = {file = "LICENSE.txt"}
+
+keywords = ["sample", "setuptools", "development"]
+
+authors = [
+  {name = "fwam", email = "fwam@queereen.dev" }
+]
+
+classifiers = [
+  # How mature is this project? Common values are
+  #   3 - Alpha
+  #   4 - Beta
+  #   5 - Production/Stable
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Topic :: Utilities",
+  
+  "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/fwam/PassGen"
+Issues = "https://github.com/fwam/PassGen/issues"
+
